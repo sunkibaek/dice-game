@@ -1,0 +1,226 @@
+@import "normalize.css";
+
+*, :before, :after {
+	box-sizing: border-box;
+}
+
+/* COLORS
+beige:		#f7eace;
+black:		#4c4c4c;
+cyan:		#7cabaa;
+darkorange: #D55534;
+lightgray:	#CDCDCD;
+*/
+
+html {
+	background-image: url('../images/body.png');
+	color: #4c4c4c;
+}
+
+header, footer {
+	width: 900px;
+	height: 2em;
+	margin: 0 auto;
+	text-align: center;
+}
+
+header h1 {
+	color: #f7eace;
+	margin: 0;
+	font-size: 4em;
+	line-height: 1.4em;
+	text-shadow: 6px -4px 0 #D55534;
+}
+
+header h1 {
+	-webkit-animation: title-animation 0.6s infinite; /* Safari 4+ */
+	-moz-animation:    title-animation 0.6s infinite; /* Fx 5+ */
+	-o-animation:      title-animation 0.6s infinite; /* Opera 12+ */
+	animation:         title-animation 0.6s infinite; /* IE 10+ */
+}
+
+@-webkit-keyframes title-animation {
+  0% { color: #D55534; text-shadow: 6px -4px 0 #f7eace; }
+  100%   { color: #f7eace; text-shadow: 6px -4px 0 #D55534; }
+}
+@-moz-keyframes title-animation {
+  0% { color: #D55534; text-shadow: 6px -4px 0 #f7eace; }
+  100%   { color: #f7eace; text-shadow: 6px -4px 0 #D55534; }
+}
+@-o-keyframes title-animation {
+  0% { color: #D55534; text-shadow: 6px -4px 0 #f7eace; }
+  100%   { color: #f7eace; text-shadow: 6px -4px 0 #D55534; }
+}
+@keyframes title-animation {
+  0% { color: #D55534; text-shadow: 6px -4px 0 #f7eace; }
+  100%   { color: #f7eace; text-shadow: 6px -4px 0 #D55534; }
+}
+
+main[role="main"] {
+	background-color: #f7eace;
+	/*height: 800px;*/
+	width: 900px;
+	margin: 40px auto 0;
+	box-shadow: 0 0 20px #4c4c4c;
+	padding: 1em 2em 2em;
+}
+
+.user,
+.controller,
+.computer {
+	width: 230px;
+	height: 500px;
+	float: left;
+}
+
+.row-one, .row-two, .row-three {
+	position: relative;
+}
+
+.right {
+	position: absolute;
+	left: 160px;
+}
+
+.row-two {
+	top: 160px;
+}
+
+.row-three {
+	top: 320px;
+}
+
+.dice {
+	position: absolute;
+	display: block;
+	width: 140px;
+	height: 140px;
+	border-radius: 10px;
+	border: 1px solid #4c4c4c;
+	background-color: #fff;
+	font-size: 20em;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 30px;
+	transition: all 0.5s;
+	display: none;
+}
+
+.dot {
+	position: absolute;
+}
+
+/* middle */
+.dice-one .dot,
+.dice-three .dot:nth-of-type(2),
+.dice-five .dot:nth-of-type(3) {
+	top: -178px;
+	left: 34px;
+}
+
+/* top left */
+.dice-two .dot:nth-of-type(1),
+.dice-three .dot:nth-of-type(1),
+.dice-four .dot:nth-of-type(1),
+.dice-five .dot:nth-of-type(1),
+.dice-six .dot:nth-of-type(1) {
+	top: -214px;
+	left: 0;
+}
+
+/* bottom right */
+.dice-two .dot:nth-of-type(2),
+.dice-three .dot:nth-of-type(3),
+.dice-four .dot:nth-of-type(4),
+.dice-five .dot:nth-of-type(2),
+.dice-six .dot:nth-of-type(6) {
+	top: -142px;
+	left: 70px;
+}
+
+/* top right */
+.dice-four .dot:nth-of-type(2),
+.dice-five .dot:nth-of-type(4),
+.dice-six .dot:nth-of-type(2) {
+	top: -214px;
+	left: 70px;
+}
+
+/* bottom left */
+.dice-four .dot:nth-of-type(3),
+.dice-five .dot:nth-of-type(5),
+.dice-six .dot:nth-of-type(5) {
+	top: -142px;
+	left: 0;
+}
+
+/* middle left */
+.dice-six .dot:nth-of-type(3) {
+	top: -178px;
+	left: 0;
+}
+
+/* middle right */
+.dice-six .dot:nth-of-type(4) {
+	top: -178px;
+	left: 70px;
+}
+
+.dice-one {
+	display: block;
+}
+
+button {
+	position: absolute;
+	top: 48px;
+	left: 140px;
+	background-color: #D55534;
+	color: #f7eace;
+	display: block;
+	width: 3.4em;
+	height: 2em;
+	font-size: 1.4em;
+	border: 3px solid #D55534;
+	transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+	background-color: #f7eace;
+	color: #D55534;
+	border: 3px solid #D55534;
+}
+
+button:disabled, button:disabled:hover {
+	background-color: #CDCDCD;
+	border: 3px solid #CDCDCD;
+	color: #f7eace;
+}
+
+.rules {
+	position: relative;
+}
+
+#restart {
+	position: absolute;
+	right: -3em;
+	background-color: #D55534;
+	color: #f7eace;
+	float: right;
+	padding: 0.4em 1em;
+	text-decoration: none;
+	border: 3px solid #D55534;
+	transition: all 0.2s ease-in-out;
+}
+
+#restart:hover {
+	background-color: #f7eace;
+	color: #D55534;
+	border: 3px solid #D55534;
+}
+
+#results:before {
+	content: "";
+	display: block;
+	clear: both;
+}
